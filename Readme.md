@@ -1,17 +1,3 @@
-Awesome Rahul — adding a solid `README.md` makes your project look polished and professional ✨
-Let’s do two things:
-
-1. A **main `README.md`** for the root monorepo
-2. Optional: Short **per-service `README.md`** files inside each folder
-
----
-
-## 📄 1. Root `README.md`
-
-Create this file at the root of your project:
-
-### 📝 `README.md`
-
 ````md
 # 🛒 Ecommerce Monorepo (Microservices App)
 
@@ -83,42 +69,3 @@ ecommerce-monorepo/
 * 📋 GitHub Project board
 
 ---
-
-## 👨‍💻 Author
-
-* \[Your Name or GitHub profile link]
-
----
-
-## 📄 License
-
-MIT (or whichever you prefer)
-
-````
-
----
-
-## 📁 2. Per-Service README (Optional)
-
-You can add a quick one-liner `README.md` inside each service folder like:
-
-### `services/auth/README.md`
-```md
-# Auth Service
-
-Handles user login and authentication.
-
-### Endpoint
-
-`POST /login` — mock login API
-````
-
-Same for `cart` and `product`.
-
----
-
-✅ Done! Let me know if you want:
-
-* A **README badge** (like GitHub Actions status)
-* Basic **test files** in each service (for CI)
-* Or deploy it to **Render / Railway / Fly.io** for free hosting
