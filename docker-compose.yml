@@ -1,16 +1,44 @@
-version: '3'
 services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - auth
+      - cart
+      - product
+    environment:
+      - REACT_APP_AUTH_URL=http://localhost:3001
+      - REACT_APP_CART_URL=http://localhost:3002
+      - REACT_APP_PRODUCT_URL=http://localhost:3003
+    networks:
+      - ecommerce-network
+
   auth:
     build: ./services/auth
     ports:
       - "3001:3001"
+    networks:
+      - ecommerce-network
 
   cart:
     build: ./services/cart
     ports:
       - "3002:3002"
+    depends_on:
+      - product
+    environment:
+      - PRODUCT_SERVICE_URL=http://product:3003
+    networks:
+      - ecommerce-network
 
   product:
     build: ./services/product
     ports:
       - "3003:3003"
+    networks:
+      - ecommerce-network
+
+networks:
+  ecommerce-network:
+    driver: bridge
