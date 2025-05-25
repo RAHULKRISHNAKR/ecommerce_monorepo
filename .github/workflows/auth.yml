@@ -1,0 +1,26 @@
+name: Auth CI
+
+on:
+  push:
+    paths:
+      - 'services/auth/**'
+
+jobs:
+  auth-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: services/auth
+        run: npm install
+
+      - name: Print Success
+        run: echo "✅ Auth service CI passed!"

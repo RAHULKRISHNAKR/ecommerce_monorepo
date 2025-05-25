@@ -1,0 +1,16 @@
+version: '3'
+services:
+  auth:
+    build: ./services/auth
+    ports:
+      - "3001:3001"
+
+  cart:
+    build: ./services/cart
+    ports:
+      - "3002:3002"
+
+  product:
+    build: ./services/product
+    ports:
+      - "3003:3003"
